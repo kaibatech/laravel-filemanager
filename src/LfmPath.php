@@ -203,11 +203,11 @@ class LfmPath
         if (in_array($sort_by, ['name', 'time'])) {
             $key_to_sort = $sort_by;
         } else {
-            $key_to_sort = 'name';
+            $key_to_sort = 'time';
         }
 
         uasort($arr_items, function ($a, $b) use ($key_to_sort) {
-            return strcasecmp($a->{$key_to_sort}, $b->{$key_to_sort});
+            return strcasecmp($b->{$key_to_sort}, $a->{$key_to_sort});
         });
 
         return $arr_items;
